@@ -9,10 +9,10 @@ background_color = "white"
 
 # for bellow keys you should have twiiter developer account you can have by simply asking twitter in
 # https://developer.twitter.com/
-consumer_key = "qJBw4NnM1yaAhuD6tWndoVurP"  # Your consumer key
-consumer_secret = "Riw9EE79E4LpUTipVEkAlhBrx2DdE8p75ZnUnv7QgMpa1ZMQ4g"
-access_key = "741947563855745024-84QUfeCOOuXnRrs9y3pqkTM0wppQdQc"
-access_secret = "gmXKfAV785JssW5jwyZ9Am4ODHMa3q8AopOBsvDMlP3Zu"
+consumer_key = ""  # Your consumer key
+consumer_secret =""
+access_key = ""
+access_secret = ""
 
 
 def get_text_from_file(path):

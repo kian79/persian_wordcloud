@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba3b6d06-50ee-46be-aff8-556a724db02f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/persian_wordcloud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/persian_wordcloud.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twitter_wordcloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/twitter_wordcloud.py" afterDir="false" />
     </list>
@@ -41,6 +43,28 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="persian_wordcloud" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="twitter_wordcloud" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="persian_wordcloud" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,7 +104,8 @@
       <option name="presentableId" value="Default" />
       <updated>1582857092039</updated>
       <workItem from="1582857097351" duration="1021000" />
-      <workItem from="1582896929747" duration="7059000" />
+      <workItem from="1582896929747" duration="7906000" />
+      <workItem from="1582905485247" duration="763000" />
     </task>
     <task id="LOCAL-00001" summary="getting texts from file ready.">
       <created>1582898295134</created>
@@ -96,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582900064969</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="getting tweets and writing them in file.">
+      <created>1582904691829</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582904691829</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,9 +150,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="getting texts from file ready." />
     <MESSAGE value="Get tweets from twitter completed using tweepy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Get tweets from twitter completed using tweepy." />
+    <MESSAGE value="getting tweets and writing them in file." />
+    <option name="LAST_COMMIT_MESSAGE" value="getting tweets and writing them in file." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/persian_wordcloud$twitter_wordcloud.coverage" NAME="twitter_wordcloud Coverage Results" MODIFIED="1582904633313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/persian_wordcloud$twitter_wordcloud.coverage" NAME="twitter_wordcloud Coverage Results" MODIFIED="1582906088464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
