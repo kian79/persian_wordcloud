@@ -4,14 +4,14 @@ from wordcloud_fa import WordCloudFa
 import numpy as np
 from PIL import Image
 from datetime import datetime
+import os
 
-path = "/home/kiankr/my_tweets.txt"
-mask_path = "/home/kiankr/Desktop/The_Arm.png"
+mask_path = "twitter_mask.png"
 background_color = "white"
-
-# for bellow keys you should have twiiter developer account you can have by simply asking twitter in
+# for bellow keys you should have twitter developer account you can have by simply asking twitter in
 # https://developer.twitter.com/
-api_file = open("/home/kiankr/Desktop/twitter_api.txt", 'r')
+api_file = open("/home/kiankr/Desktop/twitter_api.txt", 'r') # I copied my apis in this file and use them from here
+# because i didn't want anyone to see them:)
 my_apis = api_file.read().split('\n')
 print(my_apis)
 consumer_key = my_apis[0][my_apis[0].index('=') + 1:].strip()  # Your consumer key
@@ -140,10 +140,20 @@ def remove_bad_words(a_text: str):
     return a_text
 
 
-username = "zrrrrns"
-# text = get_tweets_from_user(username) #to get tweets of a specific user by its username
-text = get_text_from_file("/home/kiankr/Desktop/kian_kr_tweets1.txt") #To get tweets from a file (if you dont have twitter api you can use this.
-counter = 0
+text = ""
+anw = input("How do you want to get tweets?from file or username?<f for file and u for username>")
+while True:
+    if anw == 'f':
+        path = input("Enter absolute path of your txt file:")
+        text = get_text_from_file(path)  # To get tweets from a file (if you dont have twitter api you can use this.
+        break
+    elif anw == 'u':
+        username = input("Enter id:")
+        text = get_tweets_from_user(username)  # to get tweets of a specific user by its username
+        break
+    else:
+        print("you should enter f or u!")
+
 text = get_tweets(text)
 text = remove_bad_tweets(text)
 text = "\n".join(text)
@@ -156,12 +166,11 @@ text1 = removeWeirdChars(text1)
 mask_array = np.array(Image.open(mask_path))
 my_wc = WordCloudFa(width=1200, height=1200, background_color=background_color, mask=mask_array, persian_normalize=True,
                     repeat=False, collocations=True, no_reshape=False)
-
-open("/home/kiankr/Desktop/edited_fucking.txt", "w").write(text1)
-# my_wc.add_stop_words(["یه","من","برا","شه","وقتی","چرا","هم","بعد"])
-my_wc.add_stop_words_from_file("/home/kiankr/Desktop/stop_words_kian.txt")
+photo_path = input("where do you want to save the photo?enter absolute path.")
+open("edited_tweets.txt", "w").write(text1)
+my_wc.add_stop_words_from_file("stop_words_kian.txt")
 my_wc.generate(text1)
 image = my_wc.to_image()
 image.show()
 filename = datetime.now().strftime("%Y-%m-%d-%H")
-image.save('/home/kiankr/Documents/images/{username}_{time}_photo.png'.format(username=username, time=filename))
+image.save('{username}_{time}_photo.png'.format(username=username, time=filename))
