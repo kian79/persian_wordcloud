@@ -131,12 +131,14 @@ def remove_bad_words(a_text: str):
             a_text[i] = ""
         elif 'باش' in a_text[i]:
             a_text[i] = ""
+        elif 'رسید' in a_text[i]:
+            a_text[i] = ""
     return a_text
 
 
-username = "kian_kr"
+username = "mordysmiiith"
 # text = get_tweets_from_user(username) #to get tweets of a specific user by its username
-text = get_text_from_file("/home/kiankr/Desktop/kian_kr_tweets1.txt") #To get tweets from a file (if you dont have twitter api you can use this.
+text = get_text_from_file("/home/kiankr/Desktop/mordysmiiith_tweets1.txt") #To get tweets from a file (if you dont have twitter api you can use this.
 counter = 0
 text = get_tweets(text)
 text = remove_bad_tweets(text)
@@ -149,7 +151,7 @@ text1 = "\n".join(text)
 text1 = removeWeirdChars(text1)
 mask_array = np.array(Image.open(mask_path))
 my_wc = WordCloudFa(width=1200, height=1200, background_color=background_color, mask=mask_array, persian_normalize=True,
-                    repeat=False, collocations=False, no_reshape=False)
+                    repeat=False, collocations=True, no_reshape=False)
 
 open("/home/kiankr/Desktop/edited_fucking.txt", "w").write(text1)
 # my_wc.add_stop_words(["یه","من","برا","شه","وقتی","چرا","هم","بعد"])
