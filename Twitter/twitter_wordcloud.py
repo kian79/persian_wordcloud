@@ -10,15 +10,20 @@ mask_path = "twitter_mask.png"
 background_color = "white"
 # for bellow keys you should have twitter developer account you can have by simply asking twitter in
 # https://developer.twitter.com/
-api_file = open("/home/kiankr/Desktop/twitter_api.txt", 'r') # I copied my apis in this file and use them from here
-# because i didn't want anyone to see them:)
-my_apis = api_file.read().split('\n')
-print(my_apis)
-consumer_key = my_apis[0][my_apis[0].index('=') + 1:].strip()  # Your consumer key
-consumer_secret = my_apis[1][my_apis[1].index('=') + 1:].strip()  # your consumer secret key
-access_key = my_apis[2][my_apis[2].index('=') + 1:].strip()  # your access_key
-access_secret = my_apis[3][my_apis[3].index('=') + 1:].strip()  # your access secret
-print(consumer_key)
+consumer_key = ""
+consumer_secret = ""
+access_key = ""
+access_secret= ""
+def initial_api():
+    api_file = open("/home/kiankr/Desktop/twitter_api.txt", 'r') # I copied my apis in this file and use them from here
+    # because i didn't want anyone to see them:)
+    my_apis = api_file.read().split('\n')
+    print(my_apis)
+    consumer_key = my_apis[0][my_apis[0].index('=') + 1:].strip()  # Your consumer key
+    consumer_secret = my_apis[1][my_apis[1].index('=') + 1:].strip()  # your consumer secret key
+    access_key = my_apis[2][my_apis[2].index('=') + 1:].strip()  # your access_key
+    access_secret = my_apis[3][my_apis[3].index('=') + 1:].strip()  # your access secret
+    print(consumer_key)
 
 
 def get_text_from_file(path):
@@ -29,6 +34,7 @@ def get_text_from_file(path):
 
 def get_tweets_from_user(screen_name: str):  # You can use this for getting tweets from twitter using twitter developer
     # account apis.
+    initial_api()
     print("Starting to get tweets.")
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
