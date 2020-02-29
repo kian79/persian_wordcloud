@@ -4,20 +4,22 @@ from wordcloud_fa import WordCloudFa
 import numpy as np
 from PIL import Image
 from datetime import datetime
+
 path = "/home/kiankr/my_tweets.txt"
 mask_path = "/home/kiankr/Desktop/twitter_mask.png"
 background_color = "white"
 
 # for bellow keys you should have twiiter developer account you can have by simply asking twitter in
 # https://developer.twitter.com/
-api_file = open("/home/kiankr/Desktop/twitter_api.txt",'r')
+api_file = open("/home/kiankr/Desktop/twitter_api.txt", 'r')
 my_apis = api_file.read().split('\n')
 print(my_apis)
-consumer_key = my_apis[0][my_apis[0].index('=')+1:].strip()  # Your consumer key
-consumer_secret = my_apis[1][my_apis[1].index('=')+1:].strip()
-access_key = my_apis[2][my_apis[2].index('=')+1:].strip()
-access_secret = my_apis[3][my_apis[3].index('=')+1:].strip()
+consumer_key = my_apis[0][my_apis[0].index('=') + 1:].strip()  # Your consumer key
+consumer_secret = my_apis[1][my_apis[1].index('=') + 1:].strip()  # your consumer secret key
+access_key = my_apis[2][my_apis[2].index('=') + 1:].strip()  # your access_key
+access_secret = my_apis[3][my_apis[3].index('=') + 1:].strip()  # your access secret
 print(consumer_key)
+
 
 def get_text_from_file(path):
     with open(path, 'r') as file:
@@ -25,14 +27,15 @@ def get_text_from_file(path):
         return text
 
 
-def get_tweets_from_user(username:str):
+def get_tweets_from_user(screen_name: str):  # You can use this for getting tweets from twitter using twitter developer
+    # account apis.
     print("Starting to get tweets.")
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
     print("api initialized.")
     all_tweets = []
-    new_tweets = api.user_timeline(screen_name=username, count=180)
+    new_tweets = api.user_timeline(screen_name=screen_name, count=180)
 
     all_tweets.extend(new_tweets)
     oldest_tweet_id = all_tweets[-1].id - 1
@@ -93,7 +96,8 @@ def remove_bad_tweets(tweet_list):  # this method removes bad tweets that we don
             a_tweet = ""
     return tweet_list
 
-def remove_bad_words(a_text : str):
+
+def remove_bad_words(a_text: str):
     for i in range(len(a_text)):
         if a_text[i].startswith("@"):
             a_text[i] = ""
@@ -118,23 +122,22 @@ def remove_bad_words(a_text : str):
         elif 'شد' in a_text[i]:
             a_text[i] = ""
         elif 'من' in a_text[i]:
-            a_text[i]=""
+            a_text[i] = ""
         elif 'زد' in a_text[i]:
             a_text[i] = ""
         elif 'این' in a_text[i]:
             a_text[i] = ""
         elif 'بش' in a_text[i]:
-            a_text[i]=""
+            a_text[i] = ""
         elif 'باش' in a_text[i]:
             a_text[i] = ""
     return a_text
 
 
-
 username = "kian_kr"
-# tweets = get_tweets_from_user(username)
-text = get_text_from_file("/home/kiankr/Desktop/kian_kr_tweets1.txt")
-counter=0
+# text = get_tweets_from_user(username) #to get tweets of a specific user by its username
+text = get_text_from_file("/home/kiankr/Desktop/kian_kr_tweets1.txt") #To get tweets from a file (if you dont have twitter api you can use this.
+counter = 0
 text = get_tweets(text)
 text = remove_bad_tweets(text)
 text = "\n".join(text)
@@ -143,15 +146,16 @@ print(len(text))
 text = remove_bad_words(text)
 print(len(text))
 text1 = "\n".join(text)
-text1=removeWeirdChars(text1)
+text1 = removeWeirdChars(text1)
 mask_array = np.array(Image.open(mask_path))
-my_wc = WordCloudFa(width=1200, height=1200, background_color=background_color, mask=mask_array, persian_normalize=True, repeat=False, collocations=False, no_reshape=False)
+my_wc = WordCloudFa(width=1200, height=1200, background_color=background_color, mask=mask_array, persian_normalize=True,
+                    repeat=False, collocations=False, no_reshape=False)
 
-open("/home/kiankr/Desktop/edited_fucking.txt","w").write(text1)
+open("/home/kiankr/Desktop/edited_fucking.txt", "w").write(text1)
 # my_wc.add_stop_words(["یه","من","برا","شه","وقتی","چرا","هم","بعد"])
 my_wc.add_stop_words_from_file("/home/kiankr/Desktop/stop_words_kian.txt")
 my_wc.generate(text1)
 image = my_wc.to_image()
 image.show()
 filename = datetime.now().strftime("%Y-%m-%d-%H")
-image.save('/home/kiankr/Documents/images/{username}_{time}_photo.png'.format(username=username,time = filename))
+image.save('/home/kiankr/Documents/images/{username}_{time}_photo.png'.format(username=username, time=filename))
