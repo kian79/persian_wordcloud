@@ -3,7 +3,7 @@ import tweepy as tweepy
 from wordcloud_fa import WordCloudFa
 import numpy as np
 from PIL import Image
-
+from datetime import datetime
 path = "/home/kiankr/my_tweets.txt"
 mask_path = "/home/kiankr/Desktop/twitter_mask.png"
 background_color = "white"
@@ -76,8 +76,8 @@ def removeWeirdChars(text0):
     return weridPatterns.sub(r'', text0)
 
 
-def get_words(tweet):  # get all of the words in a tweet and return the list of words
-    word_list = tweet.split()
+def get_words(c_tweet):  # get all of the words in a tweet and return the list of words
+    word_list = c_tweet.split()
     return word_list
 
 
@@ -107,6 +107,10 @@ def remove_bad_words(a_text : str):
             a_text[i] = ""
         elif '!' in a_text[i]:
             a_text[i] = ""
+        elif 'اومد' in a_text[i]:
+            a_text[i] = ""
+        elif 'داشت' in a_text[i]:
+            a_text[i] = ""
         elif 'دار' in a_text[i]:
             a_text[i] = ""
         elif 'کن' in a_text[i]:
@@ -117,8 +121,12 @@ def remove_bad_words(a_text : str):
             a_text[i]=""
         elif 'زد' in a_text[i]:
             a_text[i] = ""
+        elif 'این' in a_text[i]:
+            a_text[i] = ""
         elif 'بش' in a_text[i]:
             a_text[i]=""
+        elif 'باش' in a_text[i]:
+            a_text[i] = ""
     return a_text
 
 
@@ -145,4 +153,5 @@ my_wc.add_stop_words_from_file("/home/kiankr/Desktop/stop_words_kian.txt")
 my_wc.generate(text1)
 image = my_wc.to_image()
 image.show()
-image.save('/home/kiankr/Documents/images/{}_photo.png'.format(username))
+filename = datetime.now().strftime("%Y-%m-%d-%H")
+image.save('/home/kiankr/Documents/images/{username}_{time}_photo.png'.format(username=username,time = filename))
