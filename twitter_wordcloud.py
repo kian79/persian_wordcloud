@@ -6,7 +6,7 @@ from PIL import Image
 from datetime import datetime
 
 path = "/home/kiankr/my_tweets.txt"
-mask_path = "/home/kiankr/Desktop/twitter_mask.png"
+mask_path = "/home/kiankr/Desktop/The_Arm.png"
 background_color = "white"
 
 # for bellow keys you should have twiiter developer account you can have by simply asking twitter in
@@ -133,12 +133,16 @@ def remove_bad_words(a_text: str):
             a_text[i] = ""
         elif 'رسید' in a_text[i]:
             a_text[i] = ""
+        elif '(' in a_text[i]:
+            a_text[i] = ""
+        elif ')' in a_text[i]:
+            a_text[i] = ""
     return a_text
 
 
-username = "mordysmiiith"
+username = "zrrrrns"
 # text = get_tweets_from_user(username) #to get tweets of a specific user by its username
-text = get_text_from_file("/home/kiankr/Desktop/mordysmiiith_tweets1.txt") #To get tweets from a file (if you dont have twitter api you can use this.
+text = get_text_from_file("/home/kiankr/Desktop/kian_kr_tweets1.txt") #To get tweets from a file (if you dont have twitter api you can use this.
 counter = 0
 text = get_tweets(text)
 text = remove_bad_tweets(text)
