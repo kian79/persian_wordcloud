@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba3b6d06-50ee-46be-aff8-556a724db02f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/persian_wordcloud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/persian_wordcloud.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/twitter_wordcloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/twitter_wordcloud.py" afterDir="false" />
     </list>
@@ -28,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wordcloud_test/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wordcloud_test/abr.py" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -105,7 +103,8 @@
       <updated>1582857092039</updated>
       <workItem from="1582857097351" duration="1021000" />
       <workItem from="1582896929747" duration="7906000" />
-      <workItem from="1582905485247" duration="763000" />
+      <workItem from="1582905485247" duration="9224000" />
+      <workItem from="1582971586718" duration="5301000" />
     </task>
     <task id="LOCAL-00001" summary="getting texts from file ready.">
       <created>1582898295134</created>
@@ -128,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582904691829</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="something fixed!">
+      <created>1582906265811</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582906265811</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,9 +157,10 @@
     <MESSAGE value="getting texts from file ready." />
     <MESSAGE value="Get tweets from twitter completed using tweepy." />
     <MESSAGE value="getting tweets and writing them in file." />
-    <option name="LAST_COMMIT_MESSAGE" value="getting tweets and writing them in file." />
+    <MESSAGE value="something fixed!" />
+    <option name="LAST_COMMIT_MESSAGE" value="something fixed!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/persian_wordcloud$twitter_wordcloud.coverage" NAME="twitter_wordcloud Coverage Results" MODIFIED="1582906088464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/persian_wordcloud$twitter_wordcloud.coverage" NAME="twitter_wordcloud Coverage Results" MODIFIED="1582979392816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
