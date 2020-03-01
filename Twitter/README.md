@@ -8,7 +8,7 @@ If you have twitter [developer account](https://developer.twitter.com) you can s
 ### Without twitter developer account 
 Its even easier to use this code without [developer account](https://developer.twitter.com)!
 
-First go [here](https://allmytweets.net) and after logging into your twitter account type id of any user on twitter and choose tweets, after couple of minutes it shows you user's last 3200 tweets and you can simply copy everything and then pasting them into a .txt file.
+First go [here](https://allmytweets.net) and after logging into your twitter account type id of any user on twitter and choose tweets, after couple of minutes it shows you user's last 3200 tweets and you can simply copy everything and then paste them into a .txt file.
 
 After that run the program and now you just need to enter 'f' when it asks you to choose between file and username and then type the absolute path of the directory in which you save text file of the tweet. After some seconds it shows and saves the picture of your wordcloud!
 
