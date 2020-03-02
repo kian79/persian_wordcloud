@@ -43,21 +43,28 @@ def get_tweets_from_user(screen_name: str):  # You can use this for getting twee
     auth.set_access_token(access_key, access_secret)
     api = tweepy.API(auth)
     print("api initialized.")
-    all_tweets = []
-    new_tweets = api.user_timeline(screen_name=screen_name, count=180)
+    text=""
+    for status in api.home_timeline():
+        print(status.text)
+        text+=status.text
 
-    all_tweets.extend(new_tweets)
-    oldest_tweet_id = all_tweets[-1].id - 1
+    # all_tweets = []
+    # new_tweets = api.user_timeline(screen_name=screen_name, count=180)
 
-    while len(new_tweets):
-        print("getting tweets before ", oldest_tweet_id)
-        new_tweets = api.user_timeline(screen_name=username, count=180, max_id=oldest_tweet_id)
-        all_tweets.extend(new_tweets)
-        oldest_tweet_id = all_tweets[-1].id - 1
-        print("{} tweets downloaded!".format(len(all_tweets)))
-    text = "\n".join(list(map(lambda x: x.text, all_tweets)))
-    my_file = open("/home/kiankr/Desktop/{}_tweets1.txt".format(username), 'w')
-    my_file.write(text)
+    # all_tweets.extend(new_tweets)
+    # oldest_tweet_id = all_tweets[-1].id - 1
+
+
+
+    # while len(new_tweets):
+    #     print("getting tweets before ", oldest_tweet_id)
+    #     new_tweets = api.user_timeline(screen_name=username, count=180, max_id=oldest_tweet_id)
+    #     all_tweets.extend(new_tweets)
+    #     oldest_tweet_id = all_tweets[-1].id - 1
+    #     print("{} tweets downloaded!".format(len(all_tweets)))
+    # text = "\n".join(list(map(lambda x: x.text, all_tweets)))
+    # my_file = open("/home/kiankr/Desktop/{}_tweets1.txt".format(username), 'w')
+    # my_file.write(text)
     return text
 
 
@@ -108,8 +115,10 @@ def remove_bad_tweets(tweet_list):  # this method removes bad tweets that we don
 
 def remove_bad_words(a_text: str):
     for i in range(len(a_text)):
-        if a_text[i].startswith("@"):
+        if '@' in a_text[i]:
             a_text[i] = ""
+        elif 'RT' in a_text[i]:
+            a_text[i]=""
         elif ord(a_text[i][0]) < 328:
             a_text[i] = ""
         elif "." in a_text[i]:
