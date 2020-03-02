@@ -94,8 +94,8 @@ def get_html_files(path:str):
         count+=1
         print("here " +str(count))
         htmls.append(open(p, 'r').read())
-        if count==3:
-            break
+        # if count==3:
+        #     break
     return htmls
 
 
@@ -116,7 +116,7 @@ for t in my_soup:
     if "text" in t.attrs['class']:
         text +=t.get_text()+" "
 open("msg_tele.txt",'w').write(text)
-mask_array = np.array(Image.open('twitter_mask.png'))
+mask_array = np.array(Image.open('tele_mas1.jpg'))
 my_wc = wordcloud_fa.WordCloudFa(width=1400,height=1400,background_color="white",persian_normalize=True, mask=mask_array)
 my_wc.add_stop_words_from_file("stop_words_kian.txt")
 text = text.split()
