@@ -15,8 +15,8 @@ Then unmark photos because we dont need photos or any other type of media to mak
  save on your pc and you can see them.
 ## Examples
 
-![Example of wordcloud](Images/2020-03-01-04-12_photo.png)
-![Example of wordcloud](Images/2020-03-01-04-16_photo.png)
+![Example of wordcloud](Images/telegram_sample2.png)
+![Example of wordcloud](Images/tele_sample2.png)
 
 
 

@@ -16,6 +16,7 @@ After that run the program and now you just need to enter 'f' when it asks you t
 
 ![Example of wordcloud](Images/2020-03-01-04-12_photo.png)
 ![Example of wordcloud](Images/2020-03-01-04-16_photo.png)
+ 
 
 
 
