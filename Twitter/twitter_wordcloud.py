@@ -44,27 +44,27 @@ def get_tweets_from_user(screen_name: str):  # You can use this for getting twee
     api = tweepy.API(auth)
     print("api initialized.")
     text=""
-    for status in api.home_timeline():
-        print(status.text)
-        text+=status.text
+    # for status in api.home_timeline():
+    #     print(status.text)
+    #     text+=status.text
 
-    # all_tweets = []
-    # new_tweets = api.user_timeline(screen_name=screen_name, count=180)
+    all_tweets = []
+    new_tweets = api.user_timeline(screen_name=screen_name, count=180)
 
-    # all_tweets.extend(new_tweets)
-    # oldest_tweet_id = all_tweets[-1].id - 1
+    all_tweets.extend(new_tweets)
+    oldest_tweet_id = all_tweets[-1].id - 1
 
 
 
-    # while len(new_tweets):
-    #     print("getting tweets before ", oldest_tweet_id)
-    #     new_tweets = api.user_timeline(screen_name=username, count=180, max_id=oldest_tweet_id)
-    #     all_tweets.extend(new_tweets)
-    #     oldest_tweet_id = all_tweets[-1].id - 1
-    #     print("{} tweets downloaded!".format(len(all_tweets)))
-    # text = "\n".join(list(map(lambda x: x.text, all_tweets)))
-    # my_file = open("/home/kiankr/Desktop/{}_tweets1.txt".format(username), 'w')
-    # my_file.write(text)
+    while len(new_tweets):
+        print("getting tweets before ", oldest_tweet_id)
+        new_tweets = api.user_timeline(screen_name=username, count=180, max_id=oldest_tweet_id)
+        all_tweets.extend(new_tweets)
+        oldest_tweet_id = all_tweets[-1].id - 1
+        print("{} tweets downloaded!".format(len(all_tweets)))
+    text = "\n".join(list(map(lambda x: x.text, all_tweets)))
+    my_file = open("/home/kiankr/Desktop/{}_tweets1.txt".format(username), 'w')
+    my_file.write(text)
     return text
 
 

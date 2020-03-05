@@ -114,10 +114,10 @@ for t in my_soup:
 print("Text is now ready!writing on a file.")
 open(f"msg_tele_{file_time}.txt", 'w').write(text)
 print("writed on a file. generating wordcloud...")
-mask_array = np.array(Image.open('tele_mas1.jpg'))
+mask_array = np.array(Image.open('tele_mask.png'))
 my_wc = wordcloud_fa.WordCloudFa(width=1400, height=1400, background_color="white", persian_normalize=True,
                                  mask=mask_array)
-my_wc.add_stop_words_from_file("stop_words_kian.txt")
+my_wc.add_stop_words_from_file("../stop_words_kian.txt")
 text = text.split()
 text = remove_bad_words(text)
 text = '\n'.join(text)
