@@ -1,0 +1,6 @@
+arabic-reshaper==2.0.15
+beautifulsoup4==4.8.2
+numpy==1.18.1
+tweepy==3.8.0
+wordcloud==1.6.0
+wordcloud-fa==0.1.6
