@@ -1,5 +1,5 @@
 # Persian_wordcloud for twitter
-A code to make wordclouds from all tweets of any user on [twitter](twitter.com) using [wordcloud-fa](https://github.com/alihoseiny/word_cloud_fa) and [tweepy](https://github.com/tweepy/tweepy) !
+A code to make wordclouds from all tweets of any user on [twitter](twitter.com) using [wordcloud-fa](https://github.com/alihoseiny/word_cloud_fa) and [tweepy](https://github.com/tweepy/tweepy)!
 
 ## How to use
 ### Using twitter APIs
